@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- THIS META TAG IS CRUCIAL FOR RESPONSIVENESS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Personal Gallery & Bio</title>
     <!-- Load Tailwind CSS -->
@@ -50,7 +51,7 @@
                     [M.R.]
                 </a>
                 
-                <!-- Desktop Navigation -->
+                <!-- Desktop Navigation (hidden on mobile, visible from medium screens up) -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="about" class="text-gray-600 hover:text-indigo-600 transition duration-300">About</a>
                     <a href="interests" class="text-gray-600 hover:text-indigo-600 transition duration-300">Interests</a>
@@ -68,16 +69,16 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
                 
                 <!-- Image Placeholder -->
-               <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center order-2 md:order-1">
+                <!-- Layout is flex-col (vertical) on mobile, but md:flex-row (horizontal) on desktop -->
+                <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center order-2 md:order-1">
                     <!-- 
-                        TO ADD YOUR PROFILE PHOTO:
-                        1. Upload your photo to an online hosting service (e.g., Imgur, Google Drive, or your website assets).
-                        2. Get the direct image URL.
-                        3. Replace the current 'src' value below with your image URL.
-                        Example: src="https://example.com/images/my_face.jpg"
+                        HOW TO ADD YOUR PROFILE PHOTO LOCALLY (GitHub):
+                        1. Create a folder named 'images' in the SAME directory as this index.html file.
+                        2. Save your profile photo inside that folder (e.g., name it 'profile.jpg').
+                        3. Change the 'src' value below to the relative path: src="images/profile.jpg"
                     -->
                     <img src="Picsart_25-11-25_13-25-29-910.png" 
-                         alt="Portrait of Meghana Routray"
+                         alt="Portrait of Alex Johnson"
                          class="rounded-full shadow-2xl w-48 h-48 md:w-72 md:h-72 object-cover border-4 border-white ring-4 ring-indigo-300 transform hover:scale-105 transition duration-500">
                 </div>
 
@@ -96,7 +97,7 @@
                         <a href="#moments" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-xl hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
                             Explore My Life
                         </a>
-                        <a href="#contact" class="px-6 py-3 border border-indigo-600 text-indigo-600 font-semibold rounded-lg shadow-xl hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
+                        <a href="contact" class="px-6 py-3 border border-indigo-600 text-indigo-600 font-semibold rounded-lg shadow-xl hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
                             Send a Message
                         </a>
                     </div>
@@ -116,8 +117,8 @@
                         I'm driven by curiosity and a deep appreciation for the simple things—strong coffee, golden hour light, and the feeling of accomplishment after a long run. This site is a little window into my world, a collection of the moments and passions that define me. Thanks for stopping by!
                     </p>
                     <div class="mt-8 text-center">
-                        <a href="#contact" class="inline-flex items-center px-6 py-3 bg-indigo-500 text-white font-medium rounded-lg hover:bg-indigo-600 transition duration-300">
-                            Connect me on Social &rarr;
+                        <a href="contact" class="inline-flex items-center px-6 py-3 bg-indigo-500 text-white font-medium rounded-lg hover:bg-indigo-600 transition duration-300">
+                            Connect on Social &rarr;
                             <!-- Icon for connection -->
                             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
@@ -130,6 +131,7 @@
         <section id="interests" class="py-16 md:py-24 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold section-heading mb-12 text-center">My World & What I Love</h2>
+                <!-- This grid adapts from 2 columns on small screens to 6 columns on large screens -->
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                     
                     <!-- Interest Card 1: Travel -->
@@ -187,12 +189,17 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold section-heading mb-12 text-center">Life Moments</h2>
                 
+                <!-- This grid adapts from 1 column on mobile, to 2 columns on small screens, to 3 columns on large screens -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
-                    <!-- Moment Card 1 -->
+                    <!-- Moment Card 1: HOW TO ADD A PICTURE (Detailed Example using a LOCAL path) -->
                     <div class="bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-indigo-300/50 transition duration-500">
-                        <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Hiking+Adventures" 
-                             alt="Hiking photo in the mountains"
+                        <!-- 
+                            If you put an image named 'hike.jpg' inside a folder called 'images' 
+                            next to your index.html file, you would use: src="./images/hike.jpg"
+                        -->
+                        <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Replace+with+local+path" 
+                             alt="Photo of a mountain range at sunrise"
                              class="w-full h-72 object-cover hover:opacity-90 transition duration-300">
                         <div class="p-4">
                             <p class="text-sm text-gray-900 font-bold mb-1">@Meghana_Adventures</p>
@@ -202,6 +209,7 @@
 
                     <!-- Moment Card 2 -->
                     <div class="bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-indigo-300/50 transition duration-500">
+                         <!-- Replace the 'src' value below with your image file path (e.g., images/lasagna.png) -->
                         <img src="https://placehold.co/600x400/94a3b8/ffffff?text=New+Recipe+Success" 
                              alt="Photo of a gourmet meal"
                              class="w-full h-72 object-cover hover:opacity-90 transition duration-300">
@@ -213,6 +221,7 @@
 
                     <!-- Moment Card 3 -->
                     <div class="bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-indigo-300/50 transition duration-500">
+                        <!-- Replace the 'src' value below with your image file path (e.g., images/city.webp) -->
                         <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Weekend+Trip" 
                              alt="Photo of a city skyline at sunset"
                              class="w-full h-72 object-cover hover:opacity-90 transition duration-300">
@@ -224,6 +233,7 @@
                     
                     <!-- Moment Card 4 -->
                     <div class="bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-indigo-300/50 transition duration-500">
+                        <!-- Replace the 'src' value below with your image file path -->
                         <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Coffee+Time" 
                              alt="A close up of a coffee cup"
                              class="w-full h-72 object-cover hover:opacity-90 transition duration-300">
@@ -235,6 +245,7 @@
 
                     <!-- Moment Card 5 -->
                     <div class="bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-indigo-300/50 transition duration-500">
+                        <!-- Replace the 'src' value below with your image file path -->
                         <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Pet+Photo" 
                              alt="A cute pet photo"
                              class="w-full h-72 object-cover hover:opacity-90 transition duration-300">
@@ -246,6 +257,7 @@
 
                     <!-- Moment Card 6 -->
                     <div class="bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-indigo-300/50 transition duration-500">
+                        <!-- Replace the 'src' value below with your image file path -->
                         <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Book+Stack" 
                              alt="Stack of books"
                              class="w-full h-72 object-cover hover:opacity-90 transition duration-300">
@@ -303,7 +315,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm">&copy; <span id="year"></span> Meghana Routray. All rights reserved.</p>
+            <p class="text-sm">&copy; <span id="year"></span> Meghana routray. All rights reserved.</p>
             <p class="text-xs text-gray-400 mt-1">Life curated with 💜.</p>
         </div>
     </footer>
